@@ -4,7 +4,7 @@ hop = ["Bánh", "Kẹo", "Viết", "Cục tẩy"]
 # Số phần tử trong list
 num_index = len(hop)
 
-# Dùng vòng lặp for lấy tên các loại chứa trong cái hộp
+# Dùng vòng lặp for thay thế giá trị trong list
 for idx in range(num_index):
     if hop[idx] == "Kẹo":
         hop[idx] = "Kim cương"
