@@ -24,5 +24,6 @@ hs = [hocsinh("Bắc Kiều Phong", 9, 10, 10),
       hocsinh("Bắc Cái", 10, 0, 1)]
 
 for i_hs in range(len(hs)):
-    print(f'{hs[i_hs].ten}. Có điểm trung bình {hs[i_hs].diem_TB()}. Kết quả: {hs[i_hs].ketqua()}')
+    print(f'{i_hs+1}. Tên học sinh: {hs[i_hs].ten}. Điểm toán: {hs[i_hs].toan}, lý: {hs[i_hs].ly}, hóa: {hs[i_hs].hoa}') 
+    print(f'Điểm trung bình là: {hs[i_hs].diem_TB()}. Kết quả: {hs[i_hs].ketqua()}')
 
