@@ -22,6 +22,7 @@ sh.range('B:B').api.Font.Underline = True #In nghiêng 1 cột
 sh.range('B:B').api.Font.Name = "Tahoma" #Thay kiểu chữ
 sh.range('B:B').api.Font.Size = 15 #Thay kiểu chữ
 sh.range('B:B').api.Font.ColorIndex = 5 #Thay màu chữ
+sh.range('B:B').api.ShrinkToFit = True # Tự động giãn cho cột (số)
 sh.range('B:B').api.WrapText = True # Tự động xuống dòng
 
 " Canh chỉnh lề theo chiều ngang"
