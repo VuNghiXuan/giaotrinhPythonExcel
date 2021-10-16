@@ -25,21 +25,33 @@ sh.range('B:B').api.Font.ColorIndex = 5 #Thay màu chữ
 sh.range('B:B').api.ShrinkToFit = True # Tự động giãn cho cột (số)
 sh.range('B:B').api.WrapText = True # Tự động xuống dòng
 
-" Canh chỉnh lề theo chiều ngang"
+
+" Canh chỉnh lề theo chiều ngang";
 sh.range('B:B').api.HorizontalAlignment = constants.HAlign.xlHAlignLeft # Canh trái
 sh.range('B:B').api.HorizontalAlignment = constants.HAlign.xlHAlignCenter # Canh giữa
 sh.range('B:B').api.HorizontalAlignment = constants.HAlign.xlHAlignRight # Canh trái
 
-" Canh chỉnh lề theo chiều dọc"
+" Canh chỉnh lề theo chiều dọc";
 sh.range('B:B').api.VerticalAlignment = constants.VAlign.xlVAlignTop # Canh trên
 sh.range('B:B').api.VerticalAlignment = constants.VAlign.xlVAlignCenter # Canh giữa
 sh.range('B:B').api.VerticalAlignment = constants.VAlign.xlVAlignBottom # Canh dưới
 
-" Xoay chữ theo chiều"
+" Xoay chữ theo chiều";
 sh.range('B1').api.Orientation = constants.Orientation.xlVertical # Xoay chiều dọc
 sh.range('B2').api.Orientation = constants.Orientation.xlHorizontal # Xoay chiều ngang
 sh.range('B3').api.Orientation = constants.Orientation.xlDownward # Xoay xuống dưới
 sh.range('B4').api.Orientation = constants.Orientation.xlUpward # Xoay lên trên
+
+"Thiết lập vùng in ấn"
+sh.api.PageSetup.PrintArea = 'A1:E7' # Setup phạm vi in
+sh.api.PageSetup.PrintTitleRows = '1:1' # Setup phạm vi in
+# sh.api.PrintOut(Preview = True, Copies =1) # Chế độ xem trước
+sh.api.PrintOut(Preview = True, Copies = 1, From = 1, To = 1) # In trang 1
+
+"Định dạng xuất --> DPF";
+# Tham khảo: https://docs.microsoft.com/en-us/office/vba/api/excel.workbook.exportasfixedformat
+# wb.api.ExportAsFixesFormat(0, 'cen_' + 'new_FileName.pfd' )
+# sh.api.ExportAsFixesFormat(0, 'cen_' + 'new_FileName.pfd' )
 
 "Một số thuộc tính không cần thực qua API";
 sh.range('B:B').color = (255,255,0) # Thay màu nền
