@@ -50,8 +50,8 @@ sh.api.PrintOut(Preview = True, Copies = 1, From = 1, To = 1) # In trang 1
 
 "Định dạng xuất --> DPF";
 # Tham khảo: https://docs.microsoft.com/en-us/office/vba/api/excel.workbook.exportasfixedformat
-# wb.api.ExportAsFixesFormat(0, 'cen_' + 'new_FileName.pfd' )
-# sh.api.ExportAsFixesFormat(0, 'cen_' + 'new_FileName.pfd' )
+# wb.api.ExportAsFixesFormat(0,'new_FileName.pfd' )
+# sh.api.ExportAsFixesFormat(0, 'new_FileName.pfd' )
 
 "Một số thuộc tính không cần thực qua API";
 sh.range('B:B').color = (255,255,0) # Thay màu nền
