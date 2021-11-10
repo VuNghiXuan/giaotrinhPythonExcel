@@ -13,15 +13,22 @@ sh1 = wb.sheets('DS_xeploai')
 rng1 = sh1.range('A1:E5')
 
 # Kiểm tra file có tên sheet là "test", nếu không thì tạo sheets("test")
-"Đoạn code trong vòng for này giúp bạn ko bị lỗi khi chạy code nhiều lần với tên sheet 'test' đã tạo trước đó"
+"Đoạn code trong vòng for này giúp bạn không bị lỗi khi chạy code nhiều lần với tên sheet 'test' đã tạo trước đó"
+sheetNames = ""
 for sh in wb.sheets:
-    if sh.name == "test": 
-        sh_test = sh.name
+    # Nếu tên sheet không phải là "test"
+    if sh.name != "test": 
+        sheetNames += sh.name
+    else: 
+        # Nếu tên sheet là "test"           
+        sheetNames += sh.name
         print("Đã tồn tại sheet có tên: 'test'")
-        break
-    else:
-        # Tạo 1 bảng tính có tên là "test"
-        sh_test = wb.sheets.add("test")
+        break  
+
+# Kiểm tra sự tồn tại sheet test
+if "test" not in sheetNames:
+    sh_test = wb.sheets.add("test") #Tạo sheet("test") mới 
+else: sh_test = wb.sheets("test") # Gán tên sheet("test") 
 
 # Ghi dữ liệu theo chiều gốc của bảng tính
 sh_test.range("A1").value = rng1.value
