@@ -9,7 +9,7 @@ class hocsinh():
 
     # Phương thức tính điểm trung bình
     def diem_TB(self):
-        self.avrg_score = round((self.toan +self.toan + self.ly)/3,3)
+        self.avrg_score = round((self.toan +self.ly + self.hoa)/3,3)
         return self.avrg_score
 
     # Thuộc tính (Chiều cao, cân nặng)
