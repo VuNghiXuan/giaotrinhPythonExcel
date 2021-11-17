@@ -12,17 +12,23 @@ class MyThread(threading.Thread): #Kế thừa model threading, class Thread
 
     # run là Phương thức có sẵn khi star nó sẽ khởi động chạy
     def run(self):
-        print(f'Chạy {self.name}')
+        print(f'Bắt đầu chạy {self.name}')
+        # Lay lock de dong bo hoa cac thread
+        threadLock = threading.Lock()
+        threadLock.acquire()
+
         while self.counter:
-            # time.sleep(self.delay)
+            time.sleep(self.delay)
             print(f'{self.name} {time.ctime()}')
             self.counter -=1
+        
+        # Giai phong lock cho thread ke tiep
+        threadLock.release()
         print(f'Kết thúc {self.name} {time.ctime()}')
-    
 try:
     threads =[]
-    th1= MyThread("Thread1", 10, 1)
-    th2= MyThread("Thread2", 10, 2)
+    th1= MyThread("Thread1", 5, 1)
+    th2= MyThread("Thread2", 5, 2)
     th1.start()
     th2.start()
     
@@ -30,7 +36,7 @@ try:
     threads.append(th1)
     threads.append(th2)
     for thr in threads:
-        thr.join()
+        thr.join() #Thêm join để đợi kết quả các thread cùng hoàn thành
     print("Hoàn thành các Threads", time.ctime())
     
 
