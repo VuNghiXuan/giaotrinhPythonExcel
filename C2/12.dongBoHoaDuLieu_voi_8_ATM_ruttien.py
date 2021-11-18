@@ -35,8 +35,8 @@ print(f'Tên tài khoản: {taikhoan.name}. Số dư: {taikhoan.soDu}')
 print("Các giao dịch rút tiền")
 timeBegin = time.time()
 "Phân luồng cho các ATM hoạt động";
-for i_ATM in range (8):
-    print(f'Rút lần thứ {i_ATM+1}:')
+for i in range (8):
+    print(f'Rút lần thứ {i+1}:')
     ruttien(taikhoan, 12)
 print(f'Tổng thời gian thực hiện {time.time()-timeBegin}')
 
