@@ -5,6 +5,7 @@ objConectSQl = mysql.connector.connect(user = 'root', host = 'localhost', passwo
 
 myCursor = objConectSQl.cursor()
 
+# Tạo bảng trong MySQL
 myCursor.execute("create table DS_NhanVien (id int (20) not null primary key," 
         + "name varchar(255),"
         + "address varchar(255))") 
